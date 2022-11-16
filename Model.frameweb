@@ -53,6 +53,14 @@
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
         </ownedAttribute>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:Partial" name="EditButton">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="router-link">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-icon">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+      </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="components/buttons">
       <packagedElement xsi:type="frameweb:FrontControllerClass" name="DeleteButton">
@@ -71,8 +79,17 @@
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
         </ownedAttribute>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="EditButton">
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="id">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="name">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+      </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components%2Fbuttons/DeleteButton" supplier="//@compose.1/components%2Fbuttons.1/DeleteButton"/>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components%2Fbuttons/DetailsButton" supplier="//@compose.1/components%2Fbuttons.1/DetailsButton"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components%2Fbuttons/EditButton" supplier="//@compose.1/components%2Fbuttons.1/EditButton"/>
   </compose>
 </frameweb:FramewebProject>
