@@ -1,0 +1,138 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: '{{ partialProperties.get("partialNameDash") }}',
+  template: `
+    	{%- set left = "{{" -%}
+   		{%- set right = "}}" -%}
+		{#- Define os atributos. -#}
+		{%- for attribute in partial.getOwnedAttributes() -%}{%- if not empty(attribute.Name) -%}
+		{%- set complementoTag = "id=\"" ~  attribute.Name ~ "\"" -%}
+		{%- set temAtributoNome = true -%}
+			{%- if attribute.Type.Name == "span" -%}{%- set tag = "span" -%}
+			{%- elseif attribute.Type.Name == "p" -%}{%- set tag = "p" -%}
+			{%- elseif attribute.Type.Name == "h1" -%}{%- set tag = "h1" -%}
+			{%- elseif attribute.Type.Name == "outputText" -%}{%- set tag = "h:outputText" -%}
+			{%- elseif attribute.Type.Name == "panelGroup" -%}{%- set tag = "h:panelGroup" -%}
+			{%- elseif attribute.Type.Name == "selectManyListbox" -%}{%- set tag = "h:selectManyListbox" -%}
+			{%- elseif attribute.Type.Name == "a" -%}{%- set tag = "a" -%}{%- set complementoTag = "href={" ~ attribute.Name ~ "}" -%}{%- set temAtributoNome = false -%}
+			{%- elseif attribute.Type.Name == "img" -%}{%- set tag = "img"  -%}{%- set complementoTag = "src={" ~ attribute.Name ~ "}" -%}{%- set temAtributoNome = false -%}
+			{%- elseif attribute.Type.Name == "External Component" -%}{%- set tag = attribute.Name -%}{%- set complementoTag = "" -%}{%- set temAtributoNome = false -%}
+			{%- else -%}{%- set tag = attribute.Type.Name -%}{%- endif -%}
+			{%- if tag == "table" -%}
+			<table>
+				<tr>
+					<th>{{ left }} {{ attribute.Name }} {{ right }}</th>
+				</tr>
+				<tr>
+					<td>{{ left }} {{ attribute.Name }} {{ right }}</td>
+				</tr>
+			</table>
+			{%- else -%}
+				<{{ tag }} {{complementoTag}}>{%- if temAtributoNome -%}{{ left }} {{ attribute.Name }} {{ right }}{%- endif -%}</{{ tag }}>
+			{%- endif -%}
+			{%- endif -%}{%- endfor -%}
+	{% if partialProperties.get("hasMethod") %}
+	{% for metodoInvocado in partialProperties.get("invocatedMethodsNames") %}
+	<button (click)="{{metodoInvocado}}">{{metodoInvocado}}</button>
+	{% endfor %}
+	{% endif %}
+
+	{#- Define o formulário. -#}
+   {% for form in forms %}
+   {% if loop.first == true %}
+   <form>
+   {% endif %}
+        {%- for relationship in form.getSourceDirectedRelationships() -%}
+        	{%- for obj in relationship.getSuppliers() -%}
+        		{%- if obj.getPageTagLib is not defined -%}
+    			    {%- set controllerName = lower_first(obj.getName()) -%}
+        		{%- endif -%}
+        	{%- endfor -%}
+        {%- endfor -%}
+		{% for attribute in form.Attributes %}
+			{%- set complementoTag = "id=\"" ~  attribute.Name ~ "\"" -%}
+			{%- set temAtributoNome = true -%}
+			{%- if attribute.Type.Name == "span" -%}{%- set tag = "span" -%}
+			{%- elseif attribute.Type.Name == "p" -%}{%- set tag = "p" -%}
+			{%- elseif attribute.Type.Name == "h1" -%}{%- set tag = "h1" -%}
+			{%- elseif attribute.Type.Name == "outputText" -%}{%- set tag = "h:outputText" -%}
+			{%- elseif attribute.Type.Name == "panelGroup" -%}{%- set tag = "h:panelGroup" -%}
+			{%- elseif attribute.Type.Name == "selectManyListbox" -%}{%- set tag = "h:selectManyListbox" -%}
+			{%- elseif attribute.Type.Name == "a" -%}{%- set tag = "a" -%}{%- set complementoTag = "href={" ~ attribute.Name ~ "}" -%}{%- set temAtributoNome = false -%}
+			{%- elseif attribute.Type.Name == "img" -%}{%- set tag = "img"  -%}{%- set complementoTag = "src={" ~ attribute.Name ~ "}" -%}{%- set temAtributoNome = false -%}
+			{%- elseif attribute.Type.Name == "External Component" -%}{%- set tag = attribute.Name -%}{%- set complementoTag = "" -%}{%- set temAtributoNome = false -%}
+			{%- else -%}{%- set tag = attribute.Type.Name -%}{%- endif -%}
+			{%- if tag == "table" -%}
+			<table>
+				<tr>
+					<th>{{ left }} {{ attribute.Name }} {{ right }}</th>
+				</tr>
+				<tr>
+					<td>{{ left }} {{ attribute.Name }} {{ right }}</td>
+				</tr>
+			</table>
+			{%- else -%}
+			<{{ tag }} {{complementoTag}} value="{{ attribute.Name }}" />
+			{%- endif -%}
+		{% endfor %}
+	{% if partialProperties.get("hasMethodForm") %}
+	{% for metodoInvocado in partialProperties.get("invocatedMethodsNames") %}
+	<button (click)="{{metodoInvocado}}">{{metodoInvocado}}</button>
+	{% endfor %}
+	{% endif %}
+	{%- if loop.last == true -%}
+	</form>
+	{%- endif -%}
+    {% endfor %}
+	{#- Fim do formulário. -#}
+
+	 {#- Define os partials referenciados. -#}
+	{%- set possuiReferenciaPartial = false -%}
+	{% for refPartial in referencedPartials %}
+	{%- set possuiReferenciaPartial = true -%}
+	{% if refPartial.UpperBound == 1 %}
+	<{{ refPartial.NameDash }} {% for spaAttribute in refPartial.SpaPropsAttributes %}{{spaAttribute.Name}}="" {% endfor %}/>
+	{% elseif refPartial.UpperBound < 0 %}
+	<{{refPartial.NameDash}} v-for="(nota, ch) in notas" :key="ch" :nota="nota" />
+	{% else %}
+		{% for i in [1..refPartial.UpperBound] %}
+		<{{ refPartial.NameDash }} />
+		{% endfor %}
+	{% endif %}
+	{%- endfor -%}
+	{#- Fim de partials referenciados. -#}
+  `
+})
+export class {{ partialProperties.get("partialName") }} implements OnInit
+{
+	{#- Fim de partials referenciados. -#}
+	{% for attribute in partialProperties.get("FrontControllerClass").getAttributes() %}
+		{%- if loop.first == true -%}
+		this.state = {
+		{%- endif -%}			
+		{%- set atributoTipo = "\"\"" -%}
+		{#- attribute.Type.Name -#}
+		{%- if attribute.Type.Name == "string" or attribute.Type.Name == "String" -%}{%- set atributoTipo = "\"\"" -%}
+		{%- elseif attribute.Type.Name == "List" or attribute.Type.Name == "list" or attribute.Type.Name == "Array" or attribute.Type.Name == "array" -%}{%- set atributoTipo = "[]" -%}
+		{%- elseif attribute.Type.Name == "Integer" or attribute.Type.Name == "integer" or attribute.Type.Name == "Int" or attribute.Type.Name == "int" -%}{%- set atributoTipo = "0" -%}
+		{%- else -%}{%- set atributoTipo = "new " ~ attribute.Type.Name ~ "()" -%}{%- endif -%}
+		{{ attribute.Name }} : {{ atributoTipo }};
+		{% endfor %}
+	{#- Fim de partials referenciados. -#}
+
+  constructor() { }
+
+  ngOnInit(): void 
+  {
+  }
+
+  {#- Parte dos métodos. -#}
+  {% for method in partialProperties.get("methodsController") %}
+	{{ method.Name }}({% for parameter in method.OwnedParameters %}{{ parameter.Type.Name }} {{ parameter.Name }}{% if loop.last == false %}, {% endif %}{% endfor %}) : {% if method.MethodType is null %}void{% else %}{{ method.MethodType.Name }}{% endif %} 
+	{
+		//TODO To be implemented
+	}
+    {% endfor -%}
+   {#- Fim da parte dos métodos. #}
+}

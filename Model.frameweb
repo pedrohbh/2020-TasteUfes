@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frameweb:FramewebProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015">
+  <compose xsi:type="frameweb:EntityModel" name="Entity Model">
+    <packagedElement xsi:type="frameweb:DomainPackage" name="br.ufes.informatica.oldenburg.core.domain">
+      <packagedElement xsi:type="frameweb:DomainClass" name="Author"/>
+    </packagedElement>
+  </compose>
+  <compose xsi:type="frameweb:NavigationModel" name="Navigation Model">
+    <packagedElement xsi:type="frameweb:ViewPackage" name="components/buttons"/>
+  </compose>
+</frameweb:FramewebProject>

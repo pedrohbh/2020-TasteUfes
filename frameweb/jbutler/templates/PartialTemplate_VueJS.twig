@@ -1,0 +1,93 @@
+<template>
+   {%- set left = "{{" -%}
+   {%- set right = "}}" -%}
+	{#- Define os atributos. -#}
+	{%- for attribute in partial.getOwnedAttributes() -%}{%- if not empty(attribute.Name) -%}
+		{%- if attribute.Type.Name == "span" -%}{%- set tag = "span" -%}
+		{%- elseif attribute.Type.Name == "p" -%}{%- set tag = "p" -%}
+		{%- elseif attribute.Type.Name == "h1" -%}{%- set tag = "h1" -%}
+		{%- elseif attribute.Type.Name == "outputText" -%}{%- set tag = "h:outputText" -%}
+		{%- elseif attribute.Type.Name == "panelGroup" -%}{%- set tag = "h:panelGroup" -%}
+		{%- elseif attribute.Type.Name == "selectManyListbox" -%}{%- set tag = "h:selectManyListbox" -%}
+		{%- else -%}{%- set tag = "<p>" -%}{%- endif -%}
+		<{{ tag }} id="{{ attribute.Name }}">{{ left }} {{ attribute.Name }} {{ right }}</{{ tag }}>
+	{%- endif -%}{%- endfor -%}
+	{% if partialProperties.get("hasMethod") %}
+	{% for metodoInvocado in partialProperties.get("invocatedMethodsNames") %}
+	<button @click="{{metodoInvocado}}">{{metodoInvocado}}</button>
+	{% endfor %}
+	{% endif %}
+{#- Define o formulário. -#}
+   {% for form in forms %}
+        {%- for relationship in form.getSourceDirectedRelationships() -%}
+        	{%- for obj in relationship.getSuppliers() -%}
+        		{%- if obj.getPageTagLib is not defined -%}
+    			    {%- set controllerName = lower_first(obj.getName()) -%}
+        		{%- endif -%}
+        	{%- endfor -%}
+        {%- endfor -%}
+		{% for attribute in form.Attributes %}
+			{%- if attribute.Type.Name == "input[text]" -%}{%- set tag = 'input type="text"' -%}
+			{%- elseif attribute.Type.Name == "outputLink" -%}{%- set tag = "h:outputLink" -%}
+			{%- else -%}{%- set tag = "nao_definido" -%}{%- endif -%}
+			<{{ tag }} id="{{ attribute.Name }}" v-model="{{ left }} {{ attribute.Name }} {{ right }}" />
+		{% endfor %}
+    {% endfor %}
+	{% if partialProperties.get("hasMethodForm") %}
+	{% for metodoInvocado in partialProperties.get("invocatedMethodsNames") %}
+	<input type="submit" :value="{{metodoInvocado}}" @click="{{metodoInvocado}}" />
+	{% endfor %}
+	{% endif %}
+    {#- Define os partials referenciados. -#}
+	{%- set possuiReferenciaPartial = false -%}
+	{% for refPartial in referencedPartials %}
+	{%- set possuiReferenciaPartial = true -%}
+	{% if refPartial.UpperBound == 1 %}
+	<{{ refPartial.NameDash }} />
+	{% elseif refPartial.UpperBound < 0 %}
+	<{{refPartial.NameDash}} v-for="(nota, ch) in notas" :key="ch" :nota="nota" />
+	{% else %}
+		{% for i in [1..refPartial.UpperBound] %}
+		<{{ refPartial.NameDash }} />
+		{% endfor %}
+	{% endif %}
+	{%- endfor -%}
+	{#- Fim de partials referenciados. -#}
+</template>
+
+<script>
+export default {
+    name: '{{ partialProperties.get("partialNameDash") }}',
+	{% if possuiReferenciaPartial == true %}
+	components: {
+		{%- for refPartial in referencedPartials -%}
+		"{{ refPartial.nameCamelCase }}"{% if loop.last == false %}, {% endif %}
+		{%- endfor -%}
+	},
+	{% endif %}
+	data: 
+	{
+		{% for attribute in partialProperties.get("FrontControllerClass").getAttributes() %}
+		{%- if loop.first == true -%}
+		return {
+		{%- endif -%}			
+		{%- set atributoTipo = "\"\"" -%}
+		{#- attribute.Type.Name -#}
+		{%- if attribute.Type.Name == "string" or attribute.Type.Name == "String" -%}{%- set atributoTipo = "\"\"" -%}
+		{%- elseif attribute.Type.Name == "List" or attribute.Type.Name == "list" or attribute.Type.Name == "Array" or attribute.Type.Name == "array" -%}{%- set atributoTipo = "{}" -%}
+		{%- elseif attribute.Type.Name == "Integer" or attribute.Type.Name == "integer" or attribute.Type.Name == "Int" or attribute.Type.Name == "int" -%}{%- set atributoTipo = "0" -%}
+		{%- else -%}{%- set atributoTipo = "{ type: Object }" -%}{%- endif -%}
+		{{ attribute.Name }} : {{ atributoTipo }}{% if loop.last == false %}, {% endif %}
+		{%- if loop.last == true -%}}{% endif %}{% endfor %}
+	},	
+	methods:
+	{		
+		{% for method in partialProperties.get("methodsController") %}
+		{{ method.Name }}({% for parameter in method.OwnedParameters %}{{ parameter.Type.Name }} {{ parameter.Name }}{% if loop.last == false %}, {% endif %}{% endfor %}) 
+		{
+			//TODO To be implemented
+		}{% if loop.last == false %}, {% endif %}
+		{% endfor %}
+	}
+}
+</script>
