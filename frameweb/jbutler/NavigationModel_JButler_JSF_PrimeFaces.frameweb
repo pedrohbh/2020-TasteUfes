@@ -203,6 +203,7 @@
       <packagedElement xsi:type="frameweb:Tag" name="input type=&quot;select&quot;"/>
       <packagedElement xsi:type="frameweb:Tag" name="input type=&quot;number&quot;"/>
       <packagedElement xsi:type="frameweb:Tag" name="b"/>
+      <packagedElement xsi:type="frameweb:Tag" name="strong"/>
     </packagedElement>
   </configures>
 </frameweb:FramewebProject>
