@@ -251,6 +251,98 @@
       <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/components/@packagedElement.6/@ownedEnd.0 //@compose.1/components/MenuMobile/@ownedAttribute.15">
         <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/components/MenuMobile" association="//@compose.1/components/@packagedElement.6"/>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:Partial" name="MenuOption">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-menu">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="template">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-btn">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-list-item-icon">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-icon">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-list">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-list-item">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-list-item-title">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-list-item-title">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-list-item">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-list-item">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:Partial" name="Overlay">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-overlay">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-progress-circular">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:Partial" name="Snackbar">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-snackbar">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="template">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-btn">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:Partial" name="Toolbar">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-app-bar">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-toolbar-title">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="router-link">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-icon">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="$vuetify">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/span"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-spacer">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-btn">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:NavigationAggregationTarget" type="//@compose.1/components/MenuOption" association="//@compose.1/components/@packagedElement.11"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-btn">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:NavigationAggregationTarget" type="//@compose.1/components/MenuMobile" association="//@compose.1/components/@packagedElement.12"/>
+        <ownedAttribute xsi:type="frameweb:NavigationAggregationTarget" type="//@compose.1/components/Login" association="//@compose.1/components/@packagedElement.13"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/components/@packagedElement.11/@ownedEnd.0 //@compose.1/components/Toolbar/@ownedAttribute.7">
+        <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/components/Toolbar" association="//@compose.1/components/@packagedElement.11"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/components/@packagedElement.12/@ownedEnd.0 //@compose.1/components/Toolbar/@ownedAttribute.9">
+        <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/components/Toolbar" association="//@compose.1/components/@packagedElement.12"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/components/@packagedElement.13/@ownedEnd.0 //@compose.1/components/Toolbar/@ownedAttribute.10">
+        <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/components/Toolbar" association="//@compose.1/components/@packagedElement.13"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="components">
       <packagedElement xsi:type="frameweb:FrontControllerClass" name="Footbar"/>
@@ -261,6 +353,10 @@
       <packagedElement xsi:type="frameweb:FrontControllerClass" name="Login">
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="onSubmit"/>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="MenuOption"/>
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="Overlay"/>
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="Snackbar"/>
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="Toolbar"/>
     </packagedElement>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components/Footbar" supplier="//@compose.1/components.1/Footbar"/>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components/HelpButton" supplier="//@compose.1/components.1/HelpButton" method="//@compose.1/components.1/HelpButton/openManual"/>
@@ -438,5 +534,9 @@
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components%2Fdetails/NutritionFactsTable" supplier="//@compose.1/components%2Fdetails.1/NutritionFactsTable"/>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components%2Fdetails/RecipeData" supplier="//@compose.1/components%2Fdetails.1/RecipeData"/>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components/LoginForm" supplier="//@compose.1/components.1/Login" method="//@compose.1/components.1/Login/onSubmit"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components/MenuOption" supplier="//@compose.1/components.1/MenuOption"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components/Overlay" supplier="//@compose.1/components.1/Overlay"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components/Snackbar" supplier="//@compose.1/components.1/Snackbar"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components/Toolbar" supplier="//@compose.1/components.1/Toolbar"/>
   </compose>
 </frameweb:FramewebProject>
