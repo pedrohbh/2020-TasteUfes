@@ -195,6 +195,36 @@
         <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-icon">
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
         </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/components/LoginForm" association="//@compose.1/components/@packagedElement.5"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:UIComponent" name="LoginForm">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-text-field">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-text-field">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-card-actions">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-row">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-container">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-btn">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="$vuetify">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/span"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="v-btn">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.1/components/@packagedElement.5/@ownedEnd.0 //@compose.1/components/Login/@ownedAttribute.9">
+        <ownedEnd xsi:type="frameweb:NavigationCompositionPart" type="//@compose.1/components/Login" association="//@compose.1/components/@packagedElement.5"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="components">
@@ -203,7 +233,9 @@
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="openManual"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:FrontControllerClass" name="MenuMobile"/>
-      <packagedElement xsi:type="frameweb:FrontControllerClass" name="Login"/>
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="Login">
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="onSubmit"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components/Footbar" supplier="//@compose.1/components.1/Footbar"/>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components/HelpButton" supplier="//@compose.1/components.1/HelpButton" method="//@compose.1/components.1/HelpButton/openManual"/>
@@ -380,5 +412,6 @@
     </packagedElement>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components%2Fdetails/NutritionFactsTable" supplier="//@compose.1/components%2Fdetails.1/NutritionFactsTable"/>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components%2Fdetails/RecipeData" supplier="//@compose.1/components%2Fdetails.1/RecipeData"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components/LoginForm" supplier="//@compose.1/components.1/Login" method="//@compose.1/components.1/Login/onSubmit"/>
   </compose>
 </frameweb:FramewebProject>
