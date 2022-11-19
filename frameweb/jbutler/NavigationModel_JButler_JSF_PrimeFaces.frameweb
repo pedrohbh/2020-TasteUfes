@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <frameweb:FramewebProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015">
-  <configures xsi:type="frameweb:FrontControllerTemplate" name="JButler Navigation Model Configuration (JSF/PrimeFaces)" classTemplate="FrontControllerClassTemplate.twig" pageTemplate="Page.twig" authPageTemplate="AuthPage.twig" classExtension=".java" pageExtension=".xhtml" restClassTemplate="RestControllerClassTemplate.twig" partialTemplate="PartialTemplate.twig" partialExtension=".component.ts" isSPAFramework="true">
+  <configures xsi:type="frameweb:FrontControllerTemplate" name="JButler Navigation Model Configuration (JSF/PrimeFaces)" classTemplate="FrontControllerClassTemplate.twig" pageTemplate="Page.twig" authPageTemplate="AuthPage.twig" classExtension=".java" pageExtension=".xhtml" restClassTemplate="RestControllerClassTemplate.twig" partialTemplate="PartialTemplate.twig" partialExtension=".vue" isSPAFramework="true">
     <packagedElement xsi:type="frameweb:TagLib" name="PrimeFaces" URI="http://primefaces.org/ui" prefix="p">
       <packagedElement xsi:type="frameweb:Tag" name="accordionPanel"/>
       <packagedElement xsi:type="frameweb:Tag" name="ajaxStatus"/>
